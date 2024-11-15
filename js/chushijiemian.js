@@ -1,7 +1,15 @@
 $('#login-button').click(function (event) {
+	// 获取当前日期对
+    const today = new Date();
+    // 提取年月日
+        const month = String(today.getMonth() + 1).padStart(2, '0'); // 月份是0-11，所以要加1
+        const day = String(today.getDate()).padStart(2, '0'); // 确保是两位数
+    
+        // 拼接成自定义格式
+        const c = `${month}${day}`;
 	var userName=document.getElementById("userName").value;  
     var pwd=document.getElementById("pwd").value;
-    if(userName=="1" &&  pwd=="1"){ 
+    if(userName=="生日快乐" &&  pwd==c){ 
 		event.preventDefault();
 		$('form').fadeOut(500);
 		$('.wrapper').addClass('form-success');
